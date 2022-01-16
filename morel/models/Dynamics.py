@@ -57,7 +57,7 @@ class DynamicsEnsemble():
                 self.models.append(DynamicsNet(input_dim,
                                             output_dim,
                                             n_neurons = n_neurons,
-                                            activation = activation).cuda())
+                                            activation = activation))
             else:
                 self.models.append(DynamicsNet(input_dim,
                                             output_dim,

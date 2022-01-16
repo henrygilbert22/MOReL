@@ -10,10 +10,10 @@ import os
 import glob
 import tarfile
 from comet_ml import Experiment
+import d4rl
 
 # dataset imports
 import gym
-import d4rl
 
 from morel.morel import Morel
 import torch
@@ -93,6 +93,7 @@ def upload_assets(comet_experiment, log_dir):
     os.remove(tar_path)
 
 def main(args):
+    
     tensorboard_writer = None
     comet_experiment = None
 

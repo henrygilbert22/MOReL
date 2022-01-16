@@ -41,7 +41,7 @@ class ActorCriticPolicy(nn.Module):
         self.h1_actv = activation()
         self.value_head = nn.Linear(n_neurons, 1)
 
-        self.var = torch.nn.Parameter(torch.tensor([0.0,0.0]).cuda(), requires_grad = True)
+        self.var = torch.nn.Parameter(torch.tensor([0.0,0.0]), requires_grad = True)
 
         self.mean_activation = nn.Tanh()
         # self.var_activation = nn.Softplus()
@@ -192,7 +192,7 @@ class PPO2():
         self.output_dim = output_dim
 
         # Instantiate Actor Critic Policy
-        self.policy = network(input_dim, output_dim, n_neurons=64).to(self.device)
+        self.policy = network(input_dim, output_dim, n_neurons=64)
 
     def forward(self, observation, action = None):
         """Performs a forward pass using the policy network
